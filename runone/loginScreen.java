@@ -10,9 +10,21 @@
  */
 package runone;
 
+import java.io.BufferedOutputStream;
+import java.io.BufferedWriter;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -43,25 +55,25 @@ public class loginScreen extends javax.swing.JFrame {
         jDialog4 = new javax.swing.JDialog();
         viewCreateMenu = new javax.swing.JFrame();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        viewStartDayPull = new javax.swing.JComboBox();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
-        jComboBox3 = new javax.swing.JComboBox();
+        viewStartMonthPull = new javax.swing.JComboBox();
+        viewStartYearPull = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox();
-        jComboBox5 = new javax.swing.JComboBox();
-        jComboBox6 = new javax.swing.JComboBox();
+        viewEndYearPull = new javax.swing.JComboBox();
+        viewEndMonthPull = new javax.swing.JComboBox();
+        viewEndDayPull = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jComboBox7 = new javax.swing.JComboBox();
+        viewFoodCategoryPull = new javax.swing.JComboBox();
         jLabel11 = new javax.swing.JLabel();
-        jComboBox8 = new javax.swing.JComboBox();
-        jComboBox9 = new javax.swing.JComboBox();
-        jButton5 = new javax.swing.JButton();
+        viewMenuTypePull = new javax.swing.JComboBox();
+        viewMenuStylePull = new javax.swing.JComboBox();
+        viewMenuSearchButton = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        viewReturnHome = new javax.swing.JButton();
         viewCreateBill = new javax.swing.JFrame();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -71,56 +83,56 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jComboBox10 = new javax.swing.JComboBox();
-        jComboBox11 = new javax.swing.JComboBox();
-        jComboBox12 = new javax.swing.JComboBox();
-        jComboBox13 = new javax.swing.JComboBox();
-        jComboBox14 = new javax.swing.JComboBox();
-        jComboBox15 = new javax.swing.JComboBox();
-        jComboBox16 = new javax.swing.JComboBox();
-        jComboBox17 = new javax.swing.JComboBox();
-        jComboBox18 = new javax.swing.JComboBox();
+        billPreCheck = new javax.swing.JCheckBox();
+        billsTableNumberPull = new javax.swing.JComboBox();
+        billsStaffName = new javax.swing.JComboBox();
+        billsSittingPull = new javax.swing.JComboBox();
+        startDayPull = new javax.swing.JComboBox();
+        startMonthPull = new javax.swing.JComboBox();
+        startYearPull = new javax.swing.JComboBox();
+        endMonthPull = new javax.swing.JComboBox();
+        endYearPull = new javax.swing.JComboBox();
+        endDayPull = new javax.swing.JComboBox();
         jLabel23 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        createBillButton = new javax.swing.JButton();
+        openCreateBills = new javax.swing.JButton();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jButton12 = new javax.swing.JButton();
+        returnHomeScreen = new javax.swing.JButton();
         createBills = new javax.swing.JFrame();
-        jButton9 = new javax.swing.JButton();
+        closeCreateBill = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        jComboBox19 = new javax.swing.JComboBox();
-        jComboBox20 = new javax.swing.JComboBox();
-        jComboBox21 = new javax.swing.JComboBox();
+        createMonthPull = new javax.swing.JComboBox();
+        createYearPull = new javax.swing.JComboBox();
+        createDayPull = new javax.swing.JComboBox();
         jLabel29 = new javax.swing.JLabel();
-        jComboBox22 = new javax.swing.JComboBox();
-        jComboBox23 = new javax.swing.JComboBox();
-        jButton10 = new javax.swing.JButton();
+        createCoursePull = new javax.swing.JComboBox();
+        createCourseItemPull = new javax.swing.JComboBox();
+        createAddItem = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel30 = new javax.swing.JLabel();
-        jComboBox24 = new javax.swing.JComboBox();
+        createTableNumberPull = new javax.swing.JComboBox();
         jLabel31 = new javax.swing.JLabel();
-        jComboBox25 = new javax.swing.JComboBox();
+        createServedByPull = new javax.swing.JComboBox();
         jLabel32 = new javax.swing.JLabel();
-        jComboBox26 = new javax.swing.JComboBox();
+        createGuestNumberPull = new javax.swing.JComboBox();
         jLabel33 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        createServiceCharge = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        createBookingFee = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
-        jTextField3 = new javax.swing.JTextField();
+        createDeductions = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
-        jComboBox27 = new javax.swing.JComboBox();
-        jButton11 = new javax.swing.JButton();
+        createPaymentType = new javax.swing.JComboBox();
+        createBill = new javax.swing.JButton();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        createBillTotal = new javax.swing.JTextField();
         makeBooking = new javax.swing.JFrame();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
@@ -134,25 +146,25 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jComboBox28 = new javax.swing.JComboBox();
-        jComboBox29 = new javax.swing.JComboBox();
-        jComboBox30 = new javax.swing.JComboBox();
-        jComboBox31 = new javax.swing.JComboBox();
-        jComboBox32 = new javax.swing.JComboBox();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
+        requirementsInput = new javax.swing.JTextArea();
+        surnameInput = new javax.swing.JTextField();
+        nameInput = new javax.swing.JTextField();
+        numberInput = new javax.swing.JTextField();
+        emailInput = new javax.swing.JTextField();
+        futureBox = new javax.swing.JCheckBox();
+        feeBox = new javax.swing.JCheckBox();
+        monthPull = new javax.swing.JComboBox();
+        dayPull = new javax.swing.JComboBox();
+        yearPull = new javax.swing.JComboBox();
+        sittingPull = new javax.swing.JComboBox();
+        numberPull = new javax.swing.JComboBox();
+        createNewBooking = new javax.swing.JButton();
+        returnToHome = new javax.swing.JButton();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         HomeScreen = new javax.swing.JFrame();
-        jButton2 = new javax.swing.JButton();
+        bookingButton = new javax.swing.JButton();
         menuButton = new javax.swing.JButton();
         budgetButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -161,9 +173,11 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
         billButton = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        logoutButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        usernameInput = new javax.swing.JTextField();
+        passwordInput = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -239,23 +253,28 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(204, 0, 0));
         jLabel6.setText("View & Create Menu");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "----------", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" }));
+        viewStartDayPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "----------", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" }));
 
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 10));
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jLabel7.setText("Start Date");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "-------", "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        viewStartMonthPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "-------", "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012" }));
+        viewStartYearPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012" }));
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 10));
         jLabel8.setText("End Date");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012" }));
+        viewEndYearPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012" }));
+        viewEndYearPull.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewEndYearPullActionPerformed(evt);
+            }
+        });
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "--------", "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        viewEndMonthPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "--------", "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "-------", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" }));
+        viewEndDayPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "-------", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" }));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 11));
         jLabel9.setText("View Menu Between Dates");
@@ -263,19 +282,19 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Arial", 0, 11));
         jLabel10.setText("Category Of Food");
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Type Of Course", "---------------", "Starter", "Main Meal", "Dessert", "Sides", "Drinks", " " }));
+        viewFoodCategoryPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Type Of Course", "---------------", "Starter", "Main Meal", "Dessert", "Sides", "Drinks", " " }));
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 11));
         jLabel11.setText("Menu Type");
 
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sitting", "----------", "Lunch", "Dinner One", "Dinner Two", "Special - Christmas", "Special - Other" }));
+        viewMenuTypePull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sitting", "----------", "Lunch", "Dinner One", "Dinner Two", "Special - Christmas", "Special - Other" }));
 
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Menu Style", "-----------", "Al a Carte", "Set", "Special", " " }));
+        viewMenuStylePull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Menu Style", "-----------", "Al a Carte", "Set", "Special", " " }));
 
-        jButton5.setText("Search");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        viewMenuSearchButton.setText("Search");
+        viewMenuSearchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                viewMenuSearchButtonActionPerformed(evt);
             }
         });
 
@@ -286,10 +305,10 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Arial", 1, 11));
         jLabel14.setText("DEMO GUI");
 
-        jButton6.setText("Return");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        viewReturnHome.setText("Return");
+        viewReturnHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                viewReturnHomeActionPerformed(evt);
             }
         });
 
@@ -310,13 +329,13 @@ public class loginScreen extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewCreateMenuLayout.createSequentialGroup()
                         .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(viewCreateMenuLayout.createSequentialGroup()
-                                .addComponent(jButton5)
+                                .addComponent(viewMenuSearchButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewCreateMenuLayout.createSequentialGroup()
                                 .addComponent(jLabel14)
                                 .addGap(52, 52, 52)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6)
+                        .addComponent(viewReturnHome)
                         .addGap(4, 4, 4)
                         .addComponent(jLabel12))
                     .addGroup(viewCreateMenuLayout.createSequentialGroup()
@@ -327,30 +346,30 @@ public class loginScreen extends javax.swing.JFrame {
                                     .addGroup(viewCreateMenuLayout.createSequentialGroup()
                                         .addComponent(jLabel8)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(viewEndDayPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(viewEndMonthPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(6, 6, 6)
-                                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(viewEndYearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(viewCreateMenuLayout.createSequentialGroup()
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(viewStartDayPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(viewStartMonthPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(6, 6, 6)
-                                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(viewStartYearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(jLabel9)
                             .addGroup(viewCreateMenuLayout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(viewFoodCategoryPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(viewCreateMenuLayout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(viewMenuTypePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(viewMenuStylePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(120, Short.MAX_VALUE))))
         );
         viewCreateMenuLayout.setVerticalGroup(
@@ -365,34 +384,34 @@ public class loginScreen extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewStartDayPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(viewStartMonthPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewStartYearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(viewEndDayPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewEndMonthPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewEndYearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(viewFoodCategoryPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(viewMenuTypePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewMenuStylePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5)
+                    .addComponent(viewMenuSearchButton)
                     .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel14)
                         .addComponent(jLabel12))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewCreateMenuLayout.createSequentialGroup()
                 .addContainerGap(288, Short.MAX_VALUE)
-                .addComponent(jButton6)
+                .addComponent(viewReturnHome)
                 .addContainerGap())
         );
 
@@ -426,43 +445,43 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Arial", 0, 11));
         jLabel22.setText("Pre - Booked?");
 
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Table Number", "--------------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        billsTableNumberPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Table Number", "--------------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
-        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Staff Name", "--------", "John", "Sam", "Elizabeth", "Rodney", "Carson", "Jenifer", "Richard" }));
+        billsStaffName.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Staff Name", "--------", "John", "Sam", "Elizabeth", "Rodney", "Carson", "Jenifer", "Richard" }));
 
-        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sitting Type", "--------", "Lunch", "Dinner One", "Dinner Two", "Special" }));
+        billsSittingPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sitting Type", "--------", "Lunch", "Dinner One", "Dinner Two", "Special" }));
 
-        jComboBox13.setFont(new java.awt.Font("Tahoma", 0, 10));
-        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        startDayPull.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        startDayPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        jComboBox14.setFont(new java.awt.Font("Tahoma", 0, 10));
-        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "------", "Jan", "Feb", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        startMonthPull.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        startMonthPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "------", "Jan", "Feb", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
 
-        jComboBox15.setFont(new java.awt.Font("Tahoma", 0, 10));
-        jComboBox15.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012", "2013" }));
+        startYearPull.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        startYearPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012", "2013" }));
 
-        jComboBox16.setFont(new java.awt.Font("Tahoma", 0, 10));
-        jComboBox16.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "------", "Jan", "Feb", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        endMonthPull.setFont(new java.awt.Font("Tahoma", 0, 10));
+        endMonthPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "------", "Jan", "Feb", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
 
-        jComboBox17.setFont(new java.awt.Font("Tahoma", 0, 10));
-        jComboBox17.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012", "2013" }));
+        endYearPull.setFont(new java.awt.Font("Tahoma", 0, 10));
+        endYearPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012", "2013" }));
 
-        jComboBox18.setFont(new java.awt.Font("Tahoma", 0, 10));
-        jComboBox18.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        endDayPull.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        endDayPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
         jLabel23.setText("View Bills");
 
-        jButton7.setText("Go!");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        createBillButton.setText("Go!");
+        createBillButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                createBillButtonActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Create Bills");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        openCreateBills.setText("Create Bills");
+        openCreateBills.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                openCreateBillsActionPerformed(evt);
             }
         });
 
@@ -473,10 +492,10 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel26.setFont(new java.awt.Font("Arial", 1, 11));
         jLabel26.setText("DEMO GUI");
 
-        jButton12.setText("Return");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        returnHomeScreen.setText("Return");
+        returnHomeScreen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                returnHomeScreenActionPerformed(evt);
             }
         });
 
@@ -494,7 +513,7 @@ public class loginScreen extends javax.swing.JFrame {
                     .addGroup(viewCreateBillLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(viewCreateBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton7)
+                            .addComponent(createBillButton)
                             .addComponent(jLabel23)
                             .addComponent(jLabel16)
                             .addGroup(viewCreateBillLayout.createSequentialGroup()
@@ -510,90 +529,92 @@ public class loginScreen extends javax.swing.JFrame {
                                             .addComponent(jLabel17))))
                                 .addGap(34, 34, 34)
                                 .addGroup(viewCreateBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(billsSittingPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(billsStaffName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(billsTableNumberPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(billPreCheck)
                                     .addGroup(viewCreateBillLayout.createSequentialGroup()
-                                        .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(endDayPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComboBox14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(endMonthPull, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jComboBox15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jCheckBox1)
-                                    .addGroup(viewCreateBillLayout.createSequentialGroup()
-                                        .addComponent(jComboBox18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComboBox16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jComboBox17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(endYearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(viewCreateBillLayout.createSequentialGroup()
                                         .addComponent(jLabel26)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
-                                        .addComponent(jButton12))))))
+                                        .addComponent(returnHomeScreen))
+                                    .addGroup(viewCreateBillLayout.createSequentialGroup()
+                                        .addComponent(startDayPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(startMonthPull, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(startYearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(61, 61, 61))))))
                     .addGroup(viewCreateBillLayout.createSequentialGroup()
                         .addGap(163, 163, 163)
-                        .addComponent(jButton8))))
+                        .addComponent(openCreateBills))))
         );
         viewCreateBillLayout.setVerticalGroup(
             viewCreateBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(viewCreateBillLayout.createSequentialGroup()
                 .addGroup(viewCreateBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(viewCreateBillLayout.createSequentialGroup()
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel23)
+                        .addGap(18, 18, 18))
+                    .addGroup(viewCreateBillLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel15))
-                    .addComponent(jLabel24))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel23)
-                .addGap(18, 18, 18)
+                        .addComponent(jLabel15)))
                 .addGroup(viewCreateBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(viewCreateBillLayout.createSequentialGroup()
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel17))
                     .addGroup(viewCreateBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBox15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox14, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(startYearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(startMonthPull, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(startDayPull, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(viewCreateBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
-                    .addComponent(jComboBox17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox16, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox18, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(endYearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(endMonthPull, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(endDayPull, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(viewCreateBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(billsSittingPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(viewCreateBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(billsStaffName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(viewCreateBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
-                    .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(billsTableNumberPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(viewCreateBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
-                    .addComponent(jCheckBox1))
+                    .addComponent(billPreCheck))
                 .addGap(46, 46, 46)
-                .addComponent(jButton7)
+                .addComponent(createBillButton)
                 .addGap(36, 36, 36)
                 .addGroup(viewCreateBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton8, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(openCreateBills, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, viewCreateBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel26)
                         .addComponent(jLabel25)
-                        .addComponent(jButton12))))
+                        .addComponent(returnHomeScreen))))
         );
 
         createBills.setTitle("Create Bills -- Clownfish");
         createBills.setMinimumSize(new java.awt.Dimension(670, 550));
 
-        jButton9.setText("Close Create Bills");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        closeCreateBill.setText("Close Create Bills");
+        closeCreateBill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                closeCreateBillActionPerformed(evt);
             }
         });
 
@@ -603,26 +624,26 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Arial", 0, 11));
         jLabel28.setText("Date");
 
-        jComboBox19.setFont(new java.awt.Font("Tahoma", 0, 10));
-        jComboBox19.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "------", "Jan", "Feb", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        createMonthPull.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        createMonthPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "------", "Jan", "Feb", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
 
-        jComboBox20.setFont(new java.awt.Font("Tahoma", 0, 10));
-        jComboBox20.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012", "2013" }));
+        createYearPull.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        createYearPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012", "2013" }));
 
-        jComboBox21.setFont(new java.awt.Font("Tahoma", 0, 10));
-        jComboBox21.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        createDayPull.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        createDayPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
         jLabel29.setFont(new java.awt.Font("Arial", 0, 11));
         jLabel29.setText("Add Item To Bill");
 
-        jComboBox22.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Course", "-----", "Starter", "Main", "Desert", "Drinks", "Sides" }));
+        createCoursePull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Course", "-----", "Starter", "Main", "Desert", "Drinks", "Sides" }));
 
-        jComboBox23.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item From That Course", "--------", "Properly Filled from DB", "Fish dish", "Veg Dish", "Fish and Veg Dish", "Coffee", "Tea", "Soft Drink" }));
+        createCourseItemPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item From That Course", "--------", "Properly Filled from DB", "Fish dish", "Veg Dish", "Fish and Veg Dish", "Coffee", "Tea", "Soft Drink" }));
 
-        jButton10.setText("Add Item");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        createAddItem.setText("Add Item");
+        createAddItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                createAddItemActionPerformed(evt);
             }
         });
 
@@ -634,44 +655,44 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel30.setFont(new java.awt.Font("Arial", 0, 11));
         jLabel30.setText("Table Number");
 
-        jComboBox24.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Table Number", "---------", "1", "2", "3", "4", "5", "6", "7", "8", "9" }));
+        createTableNumberPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Table Number", "---------", "1", "2", "3", "4", "5", "6", "7", "8", "9" }));
 
         jLabel31.setFont(new java.awt.Font("Arial", 0, 11));
         jLabel31.setText("Served By");
 
-        jComboBox25.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Staff Name", "--------", "John", "Sam", "Elizabeth", "Rodney", "Carson", "Jenifer", "Richard" }));
+        createServedByPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Staff Name", "--------", "John", "Sam", "Elizabeth", "Rodney", "Carson", "Jenifer", "Richard" }));
 
         jLabel32.setFont(new java.awt.Font("Arial", 0, 11));
         jLabel32.setText("Number Of Guests");
 
-        jComboBox26.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Number Of Guests", "-------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        createGuestNumberPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Number Of Guests", "-------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
         jLabel33.setFont(new java.awt.Font("Arial", 0, 11));
         jLabel33.setText("Service Charge");
 
-        jTextField1.setText("If(guests =>8) add charge");
+        createServiceCharge.setText("If(guests =>8) add charge");
 
         jLabel34.setFont(new java.awt.Font("Arial", 0, 11));
         jLabel34.setText("Boooking Fee");
 
-        jTextField2.setText("If(guests =>8) ");
+        createBookingFee.setText("If(guests =>8) ");
 
         jLabel35.setFont(new java.awt.Font("Arial", 0, 11));
         jLabel35.setText("Deductions");
 
         jScrollPane2.setViewportView(jTextPane1);
 
-        jTextField3.setText("Allows for deductions Such as goodwill gestures ");
+        createDeductions.setText("Allows for deductions Such as goodwill gestures ");
 
         jLabel36.setFont(new java.awt.Font("Arial", 0, 11));
         jLabel36.setText("Payment Type");
 
-        jComboBox27.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Payment Type", "----------", "Cash", "Credit Card", "Debit Card", "Cheque", " " }));
+        createPaymentType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Payment Type", "----------", "Cash", "Credit Card", "Debit Card", "Cheque", " " }));
 
-        jButton11.setText("Create Bill");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        createBill.setText("Create Bill");
+        createBill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                createBillActionPerformed(evt);
             }
         });
 
@@ -680,7 +701,7 @@ public class loginScreen extends javax.swing.JFrame {
 
         jLabel38.setText("Total Bill");
 
-        jTextField4.setText("Total calclated");
+        createBillTotal.setText("Total calclated");
 
         javax.swing.GroupLayout createBillsLayout = new javax.swing.GroupLayout(createBills.getContentPane());
         createBills.getContentPane().setLayout(createBillsLayout);
@@ -692,26 +713,26 @@ public class loginScreen extends javax.swing.JFrame {
                     .addGroup(createBillsLayout.createSequentialGroup()
                         .addComponent(jLabel28)
                         .addGap(42, 42, 42)
-                        .addComponent(jComboBox21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(createDayPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox19, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(createMonthPull, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(createYearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(344, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, createBillsLayout.createSequentialGroup()
                         .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, createBillsLayout.createSequentialGroup()
-                                    .addComponent(jButton11)
+                                    .addComponent(createBill)
                                     .addGap(155, 155, 155)
                                     .addComponent(jLabel37)
                                     .addGap(57, 57, 57))
                                 .addGroup(createBillsLayout.createSequentialGroup()
                                     .addComponent(jLabel29)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jComboBox22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(createCoursePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jComboBox23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(createCourseItemPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(createBillsLayout.createSequentialGroup()
                                     .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -722,29 +743,29 @@ public class loginScreen extends javax.swing.JFrame {
                                         .addComponent(jLabel36))
                                     .addGap(18, 18, 18)
                                     .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jComboBox27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jComboBox26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(createPaymentType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(createGuestNumberPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(createDeductions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(createServiceCharge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(createBookingFee, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(createBillTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGroup(createBillsLayout.createSequentialGroup()
                                     .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel30)
                                         .addComponent(jLabel31))
                                     .addGap(42, 42, 42)
                                     .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jComboBox24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jComboBox25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(createTableNumberPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(createServedByPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, createBillsLayout.createSequentialGroup()
-                                .addComponent(jButton9)
+                                .addComponent(closeCreateBill)
                                 .addGap(79, 79, 79))
                             .addGroup(createBillsLayout.createSequentialGroup()
                                 .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, createBillsLayout.createSequentialGroup()
-                                        .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(createAddItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGap(106, 106, 106))
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(54, 54, 54))))
@@ -763,61 +784,61 @@ public class loginScreen extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
-                    .addComponent(jComboBox20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox19, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox21, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(createYearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(createMonthPull, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(createDayPull, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(createBillsLayout.createSequentialGroup()
-                        .addComponent(jButton10)
+                        .addComponent(createAddItem)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(createBillsLayout.createSequentialGroup()
                         .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel29)
-                            .addComponent(jComboBox22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(createCoursePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(createCourseItemPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(67, 67, 67)
                         .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel30)
-                            .addComponent(jComboBox24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(createTableNumberPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel31)
-                            .addComponent(jComboBox25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(createServedByPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel32)
-                            .addComponent(jComboBox26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(createGuestNumberPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(createBillsLayout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addComponent(jLabel33))
                             .addGroup(createBillsLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(createServiceCharge, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel34)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(createBookingFee, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel35)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(createDeductions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel36)
-                            .addComponent(jComboBox27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(createPaymentType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel38)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(createBillTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                         .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton9, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(closeCreateBill, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, createBillsLayout.createSequentialGroup()
-                                .addComponent(jButton11)
+                                .addComponent(createBill)
                                 .addContainerGap())
                             .addComponent(jLabel37, javax.swing.GroupLayout.Alignment.TRAILING)))))
         );
@@ -849,39 +870,39 @@ public class loginScreen extends javax.swing.JFrame {
 
         jLabel49.setText("Specialist Requirements");
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane3.setViewportView(jTextArea2);
+        requirementsInput.setColumns(20);
+        requirementsInput.setRows(5);
+        jScrollPane3.setViewportView(requirementsInput);
 
-        jComboBox28.setFont(new java.awt.Font("Tahoma", 0, 10));
-        jComboBox28.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "------", "Jan", "Feb", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        monthPull.setFont(new java.awt.Font("Tahoma", 0, 10));
+        monthPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "------", "Jan", "Feb", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
 
-        jComboBox29.setFont(new java.awt.Font("Tahoma", 0, 10));
-        jComboBox29.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        dayPull.setFont(new java.awt.Font("Tahoma", 0, 10));
+        dayPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        jComboBox30.setFont(new java.awt.Font("Tahoma", 0, 10));
-        jComboBox30.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012", "2013" }));
+        yearPull.setFont(new java.awt.Font("Tahoma", 0, 10));
+        yearPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012", "2013" }));
 
-        jComboBox31.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sitting Type", "--------", "Lunch", "Dinner One", "Dinner Two", "Special" }));
-        jComboBox31.addActionListener(new java.awt.event.ActionListener() {
+        sittingPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sitting Type", "--------", "Lunch", "Dinner One", "Dinner Two", "Special" }));
+        sittingPull.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox31ActionPerformed(evt);
+                sittingPullActionPerformed(evt);
             }
         });
 
-        jComboBox32.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Number Of Guests", "-------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        numberPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Number Of Guests", "-------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
-        jButton13.setText("Make Booking");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        createNewBooking.setText("Make Booking");
+        createNewBooking.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                createNewBookingActionPerformed(evt);
             }
         });
 
-        jButton14.setText("Return");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
+        returnToHome.setText("Return");
+        returnToHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
+                returnToHomeActionPerformed(evt);
             }
         });
 
@@ -921,22 +942,25 @@ public class loginScreen extends javax.swing.JFrame {
                                 .addGap(45, 45, 45)
                                 .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-                                    .addComponent(jCheckBox2)
-                                    .addComponent(jCheckBox3)
+                                    .addComponent(nameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+                                    .addComponent(surnameInput, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+                                    .addComponent(numberInput, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+                                    .addComponent(emailInput, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+                                    .addComponent(futureBox)
+                                    .addComponent(feeBox)
+                                    .addComponent(sittingPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(makeBookingLayout.createSequentialGroup()
-                                        .addComponent(jComboBox29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComboBox28, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(makeBookingLayout.createSequentialGroup()
+                                                .addComponent(dayPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(monthPull, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(numberPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(18, 18, 18)
-                                        .addComponent(jComboBox30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jComboBox31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(yearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(31, 31, 31))))
                             .addGroup(makeBookingLayout.createSequentialGroup()
-                                .addComponent(jButton13)
+                                .addComponent(createNewBooking)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(45, 45, 45))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, makeBookingLayout.createSequentialGroup()
@@ -944,7 +968,7 @@ public class loginScreen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
                 .addComponent(jLabel52)
                 .addGap(109, 109, 109)
-                .addComponent(jButton14)
+                .addComponent(returnToHome)
                 .addGap(42, 42, 42))
         );
         makeBookingLayout.setVerticalGroup(
@@ -958,55 +982,55 @@ public class loginScreen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, makeBookingLayout.createSequentialGroup()
-                        .addComponent(jButton14)
+                        .addComponent(returnToHome)
                         .addGap(21, 21, 21))
                     .addComponent(jLabel50, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(makeBookingLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel40)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(surnameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel41)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(nameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel42)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(numberInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel43)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(emailInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel44)
-                            .addComponent(jCheckBox2))
+                            .addComponent(futureBox))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel45)
-                            .addComponent(jComboBox32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(numberPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel46)
-                            .addComponent(jCheckBox3))
+                            .addComponent(feeBox))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel47)
                             .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jComboBox30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jComboBox28, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jComboBox29, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(yearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(monthPull, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(dayPull, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel48)
-                            .addComponent(jComboBox31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(sittingPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(makeBookingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel49)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton13)
+                        .addComponent(createNewBooking)
                         .addGap(34, 34, 34)
                         .addComponent(jLabel52)
                         .addContainerGap())))
@@ -1017,15 +1041,15 @@ public class loginScreen extends javax.swing.JFrame {
         HomeScreen.setBackground(new java.awt.Color(0, 102, 255));
         HomeScreen.setMinimumSize(new java.awt.Dimension(557, 444));
 
-        jButton2.setText("Make Booking");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        bookingButton.setText("Make Booking");
+        bookingButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                bookingButtonMouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bookingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bookingButtonActionPerformed(evt);
             }
         });
 
@@ -1077,10 +1101,10 @@ public class loginScreen extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Log Out");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        logoutButton.setText("Log Out");
+        logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                logoutButtonActionPerformed(evt);
             }
         });
 
@@ -1099,7 +1123,7 @@ public class loginScreen extends javax.swing.JFrame {
                 .addGroup(HomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(HomeScreenLayout.createSequentialGroup()
                         .addGroup(HomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bookingButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(menuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(125, 125, 125)
                         .addGroup(HomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -1109,7 +1133,7 @@ public class loginScreen extends javax.swing.JFrame {
                         .addGap(160, 160, 160)
                         .addComponent(jLabel5)
                         .addGap(161, 161, 161)
-                        .addComponent(jButton3))))
+                        .addComponent(logoutButton))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeScreenLayout.createSequentialGroup()
                 .addContainerGap(234, Short.MAX_VALUE)
                 .addComponent(jLabel4)
@@ -1130,13 +1154,13 @@ public class loginScreen extends javax.swing.JFrame {
                     .addGroup(HomeScreenLayout.createSequentialGroup()
                         .addGroup(HomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jButton3))
+                            .addComponent(logoutButton))
                         .addContainerGap())
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(HomeScreenLayout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addGroup(HomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bookingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(billButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(176, 176, 176)
                 .addGroup(HomeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1148,14 +1172,14 @@ public class loginScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login Screen");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel1.setText("Please Login");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1163,11 +1187,18 @@ public class loginScreen extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(146, 146, 146)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel1))
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1)
+                            .addComponent(jLabel1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(usernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(87, 87, 87)
+                        .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1176,76 +1207,97 @@ public class loginScreen extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(26, 26, 26)
                 .addComponent(jButton1)
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        
-        username = JOptionPane.showInputDialog("please enter user name");    //create prompt for username
-        passwords = JOptionPane.showInputDialog("please enter password");   //create prompt for password
+        username = usernameInput.getText();
+        passwords = passwordInput.getText();
+        //passwords = newPassword.
+      //  passwords = newPassword.toString();
+        //username = JOptionPane.showInputDialog("please enter user name");    //create prompt for username
+       // passwords = JOptionPane.showInputDialog("please enter password");   //create prompt for password
         System.out.println("username " +username + "\n");                   
-        System.out.println("password " +passwords);
+        System.out.println("password " + passwords);
         
         login();    //calling login method
-        viewScreenState();
-        // TODO add your handling code here:        // TODO add your handling code here:
+        viewScreenState();  //calls the view screenstate method for logins
+
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
+/*here starts the buttons and their associated functions //some are empty cant delete those....yet!!*/
+    private void viewMenuSearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMenuSearchButtonActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        viewMenu();
+        
+        
+        
+    }//GEN-LAST:event_viewMenuSearchButtonActionPerformed
 
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void viewReturnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewReturnHomeActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        viewCreateMenu.setVisible(false);     }//GEN-LAST:event_viewReturnHomeActionPerformed
 
-        viewCreateMenu.setVisible(false);     }//GEN-LAST:event_jButton6ActionPerformed
+    private void createBillButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBillButtonActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        viewCreateBills();
+        
+    }//GEN-LAST:event_createBillButtonActionPerformed
 
-    }//GEN-LAST:event_jButton7ActionPerformed
+    private void openCreateBillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openCreateBillsActionPerformed
+createBills.setVisible(true);        
+    }//GEN-LAST:event_openCreateBillsActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void returnHomeScreenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnHomeScreenActionPerformed
 
-    }//GEN-LAST:event_jButton8ActionPerformed
+        viewCreateBill.setVisible(false);     }//GEN-LAST:event_returnHomeScreenActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void closeCreateBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeCreateBillActionPerformed
+        createBills.setVisible(false);
+        
+    }//GEN-LAST:event_closeCreateBillActionPerformed
 
-        viewCreateBill.setVisible(false);     }//GEN-LAST:event_jButton12ActionPerformed
+    private void createAddItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAddItemActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_createAddItemActionPerformed
 
-    }//GEN-LAST:event_jButton9ActionPerformed
+    private void createBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBillActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    createBills();
+        
+    }//GEN-LAST:event_createBillActionPerformed
 
-    }//GEN-LAST:event_jButton10ActionPerformed
+    private void sittingPullActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sittingPullActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_sittingPullActionPerformed
 
-    }//GEN-LAST:event_jButton11ActionPerformed
+    private void createNewBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewBookingActionPerformed
+   try {
+            makeBookingWrite();      //calls writeout method
+        } catch (IOException ex) {
+            Logger.getLogger(loginScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_createNewBookingActionPerformed
 
-    private void jComboBox31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox31ActionPerformed
+    private void returnToHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnToHomeActionPerformed
 
-    }//GEN-LAST:event_jComboBox31ActionPerformed
+        makeBooking.setVisible(false);     }//GEN-LAST:event_returnToHomeActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void bookingButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookingButtonMouseClicked
 
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_bookingButtonMouseClicked
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+    private void bookingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookingButtonActionPerformed
 
-        makeBooking.setVisible(false);     }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-
-    }//GEN-LAST:event_jButton2MouseClicked
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-        makeBooking.setVisible(true);         System.out.println("Make Booking");     }//GEN-LAST:event_jButton2ActionPerformed
+        makeBooking.setVisible(true);         System.out.println("Make Booking");     }//GEN-LAST:event_bookingButtonActionPerformed
 
     private void menuButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuButtonMouseClicked
 
@@ -1273,67 +1325,224 @@ public class loginScreen extends javax.swing.JFrame {
     }
     
     
-        private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-            resetView();
+        private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
+            resetView();        //calls reset view as logged out
             HomeScreen.setVisible(false);        
             // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_logoutButtonActionPerformed
+
+    private void viewEndYearPullActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewEndYearPullActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewEndYearPullActionPerformed
     
-    private void login(){   //method to verify the login details
+    
+    
+    /*method for loggin in*/
+    private void login(){   
 
             if("manager".equals(username) && "hello".equals(passwords)){         //if the username is manager
-                manager = true;
-                count = 1;
-                
+                //manager = true;
+                count = 1;      //sets count for manager
+                passwordInput.setText("");
                 System.out.println("logging you in");   //print message
             }        
                 
             if("staff".equals(username) && "hi".equals(passwords)){
-            staff = true ; 
-            count =2 ;
+            //staff = true ; 
+            count =2 ;  //sets count at 2
+            passwordInput.setText("");
+
             System.out.println("logging in with less available");
             }
             
             if("temp staff".equals(username) && "orite".equals(passwords)){
-                tempStaff = true;
-                count = 3;
+                //tempStaff = true;
+                count = 3;      //sets count at 3
+                passwordInput.setText("");
+
                 System.out.println("logging you in with nothing availabnle");
             }
                 
                 
         }
-    private void viewScreenState(){
-        switch(count){
-            
+    
+    
+    /*views different types of the vending machine depening
+     on what case we have eneterd 
+     Case is determined via the user login data
+     */
+    private void viewScreenState(){ //to show different screen views
+        switch(count){              //switch statement to swhow different sets of buttons
+                                       //depending on who was loggin in
             case 1:
-                HomeScreen.setVisible(true);
+                HomeScreen.setVisible(true);        //for manager all enabled
                 billButton.setEnabled(true);
                 menuButton.setEnabled(true);
                 budgetButton.setEnabled(true);
             break;
             case 2:
-                HomeScreen.setVisible(true);
+                HomeScreen.setVisible(true);    //for staff some enabled
                 billButton.setEnabled(true);
             break;
             case 3:
-                HomeScreen.setVisible(true);
+                HomeScreen.setVisible(true);    //for temp staff only one enabled
             break;
                 
             default:
                 System.out.println("please log in");
         }
     }
-    
-    private void resetView(){
+    /*method to reset view on users logout*/
+    private void resetView(){           //resets the buttons to deactivated
         billButton.setEnabled(false);
         budgetButton.setEnabled(false);
         menuButton.setEnabled(false);
-        count = 0;
+        count = 0;          //resets the count to 0 so that it can then again be changed 
     }
     
+    /*Method to writeout the users input (currently as System.out lines
+     Should be using a text file
+     And then eventually a write method to the database.
+     ******************************************************
+     This method also calls switchYear switchMonth and switchSitting */
+    public void makeBookingWrite() throws IOException {
+        /*a LARGE amount of local variables */
+        String surnameOutput = surnameInput.getText();
+        String nameOutput = nameInput.getText();
+        String numberOutput = numberInput.getText();
+        String emailOutput = emailInput.getText();
+        Boolean futureOutput = futureBox.isSelected();
+        Boolean feeOutput = feeBox.isSelected();
+        String requirementsOutput = requirementsInput.getText();
+        Object dayOutput = dayPull.getSelectedItem();
+        Object monthOutput = monthPull.getSelectedItem();
+        Object yearOutput = yearPull.getSelectedItem();
+        Object sittingOutput = sittingPull.getSelectedItem();
+        Object partyOutput = numberPull.getSelectedItem();
+        /*this first section are used to collect input from the user fields*/
+
+        /*Testing debugging print statements*/
+        System.out.println(surnameOutput);
+        System.out.println(nameOutput);
+        System.out.println(numberOutput);
+        System.out.println(emailOutput);
+        System.out.println(futureOutput);
+        System.out.println(partyOutput);
+        System.out.println(feeOutput);
+        System.out.println(dayOutput + " "+ monthOutput + " " + yearOutput);
+        System.out.println(sittingOutput);
+        System.out.println("And has " + requirementsOutput + " requirements");
+       /*end of testing debuggery statements*/
         
         
+        /*this is the write to file section for these variables*/
+    //   char 
+        try //try loop
+        {
+            BufferedWriter out = new BufferedWriter(new FileWriter("newFileOutput1.txt"));     //sets a datastream named out to null
+
+       // out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("newFileOutput.txt")));            
+                out.write(surnameOutput);
+
+                out.write(nameOutput);
        
+                out.write(numberOutput);
+               // i++;
+                out.write(emailOutput);
+               // i++;
+                out.write(futureOutput.toString());
+            //    out.write(partyOutput);
+                out.write(feeOutput.toString());
+                
+               // out.write(dayOutput+ monthOutput + yearOutput);
+                //out.write(sittingOutput);
+                out.write(requirementsOutput);
+                
+        out.close();        
+        }catch (Exception e){
+                System.err.println("error:" +e);}
+    }
+            
+    
+    public void viewCreateBills(){
+        Object viewStartDayOutput = startDayPull.getSelectedItem();
+        Object viewStartMonthOutput = startMonthPull.getSelectedItem();
+        Object viewStartYearOutput = startYearPull.getSelectedItem();
+        Object viewEndDayOutput = endDayPull.getSelectedItem();
+        Object viewEndMonthOutput = endMonthPull.getSelectedItem();
+        Object viewEndYearOutput = endMonthPull.getSelectedItem();
+        Object billsSittingOutput = billsSittingPull.getSelectedItem();
+        Object billsStaffOutput = billsStaffName.getSelectedItem();
+        Object billsTableNumberOutput = billsTableNumberPull.getSelectedItem();
+        Boolean billsPreOutput = billPreCheck.isSelected();
+        
+        System.out.println(viewStartDayOutput);
+        System.out.println(viewStartMonthOutput);
+        System.out.println(viewStartYearOutput);
+        System.out.println(viewEndDayOutput);
+        System.out.println(viewEndMonthOutput);
+        System.out.println(viewEndYearOutput);
+        System.out.println(billsSittingOutput);
+        System.out.println(billsStaffOutput);
+        System.out.println(billsTableNumberOutput);
+        System.out.println(billsPreOutput);
+        
+        
+    }
+    /*method for viewmenu to get input and then to print it*/
+    public void viewMenu(){
+        Object viewStartDayOutput = viewStartDayPull.getSelectedItem();
+        Object viewStartMonthOutput = viewStartMonthPull.getSelectedItem();
+        Object viewStartYearOutput = viewStartYearPull.getSelectedItem();
+        Object viewEndDayOutput = viewEndDayPull.getSelectedItem();
+        Object viewEndMonthOutput = viewEndMonthPull.getSelectedItem();
+        Object viewEndYearOutput = viewEndYearPull.getSelectedItem();
+        Object viewFoodCategoryOutput = viewFoodCategoryPull.getSelectedItem();
+        Object viewMenuTypeOutput = viewMenuTypePull.getSelectedItem();
+        Object viewMenuStyleOutput = viewMenuStylePull.getSelectedItem();
+        
+        System.out.println(viewStartDayOutput);
+        System.out.println(viewStartMonthOutput);
+        System.out.println(viewStartYearOutput);
+        System.out.println(viewEndDayOutput);
+        System.out.println(viewEndMonthOutput);
+        System.out.println(viewEndYearOutput);
+        System.out.println(viewFoodCategoryOutput);
+        System.out.println(viewMenuTypeOutput);
+        System.out.println(viewMenuStyleOutput);
+        
+        
+    }
+    /*method to */
+    public void createBills(){
+        Object createDayOutput = createDayPull.getSelectedItem();
+        Object createMonthOutput = createMonthPull.getSelectedItem();
+        Object createYearOutput = createYearPull.getSelectedItem();
+        Object createCourseOutput = createCoursePull.getSelectedItem();
+        Object createCourseItemOutput = createCourseItemPull.getSelectedItem();
+        Object createTableNumberOutput = createTableNumberPull.getSelectedItem();
+        Object createServedByOutput = createServedByPull.getSelectedItem();
+        Object createGuestNumberOutput = createGuestNumberPull.getSelectedItem();
+        String createServiceChargeOutput = createServiceCharge.getText();
+        String createBookingFeeOutput = createBookingFee.getText();
+        String createDeductionsOutput = createDeductions.getText();
+        Object createPaymentOutput = createPaymentType.getSelectedItem();
+        String createTotalOutput = createBillTotal.getText();
+        
+        System.out.println(createDayOutput + " " + createMonthOutput + " " + createYearOutput );
+        System.out.println(createCourseOutput + " " + createCourseItemOutput);
+        System.out.println(createTableNumberOutput);
+        System.out.println(createServedByOutput);
+        System.out.println(createGuestNumberOutput);
+        System.out.println(createServiceChargeOutput);
+        System.out.println(createBookingFeeOutput);
+        System.out.println(createDeductionsOutput);
+        System.out.println(createPaymentOutput);
+        System.out.println(createTotalOutput);
+    }
+        
+          
+    
     
     /**
      * @param args the command line arguments
@@ -1370,69 +1579,53 @@ public class loginScreen extends javax.swing.JFrame {
             }
         });
     }
+                  
+  /*  String newMonth;
+    int newYear ;
+    String newSitting = null;*/
+    
+    char [] newPassword;
     private String username;
     private String passwords;
     int count = 0;
-    boolean manager = false;
-    boolean staff = false;
-    boolean tempStaff = false;
-    
-//   List logins = new ArrayList();
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame HomeScreen;
     private javax.swing.JButton billButton;
+    private javax.swing.JCheckBox billPreCheck;
+    private javax.swing.JComboBox billsSittingPull;
+    private javax.swing.JComboBox billsStaffName;
+    private javax.swing.JComboBox billsTableNumberPull;
+    private javax.swing.JButton bookingButton;
     private javax.swing.JButton budgetButton;
+    private javax.swing.JButton closeCreateBill;
+    private javax.swing.JButton createAddItem;
+    private javax.swing.JButton createBill;
+    private javax.swing.JButton createBillButton;
+    private javax.swing.JTextField createBillTotal;
     private javax.swing.JFrame createBills;
     private javax.swing.JDialog createBillsDialog;
+    private javax.swing.JTextField createBookingFee;
+    private javax.swing.JComboBox createCourseItemPull;
+    private javax.swing.JComboBox createCoursePull;
+    private javax.swing.JComboBox createDayPull;
+    private javax.swing.JTextField createDeductions;
+    private javax.swing.JComboBox createGuestNumberPull;
+    private javax.swing.JComboBox createMonthPull;
+    private javax.swing.JButton createNewBooking;
+    private javax.swing.JComboBox createPaymentType;
+    private javax.swing.JComboBox createServedByPull;
+    private javax.swing.JTextField createServiceCharge;
+    private javax.swing.JComboBox createTableNumberPull;
+    private javax.swing.JComboBox createYearPull;
+    private javax.swing.JComboBox dayPull;
+    private javax.swing.JTextField emailInput;
+    private javax.swing.JComboBox endDayPull;
+    private javax.swing.JComboBox endMonthPull;
+    private javax.swing.JComboBox endYearPull;
+    private javax.swing.JCheckBox feeBox;
+    private javax.swing.JCheckBox futureBox;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox10;
-    private javax.swing.JComboBox jComboBox11;
-    private javax.swing.JComboBox jComboBox12;
-    private javax.swing.JComboBox jComboBox13;
-    private javax.swing.JComboBox jComboBox14;
-    private javax.swing.JComboBox jComboBox15;
-    private javax.swing.JComboBox jComboBox16;
-    private javax.swing.JComboBox jComboBox17;
-    private javax.swing.JComboBox jComboBox18;
-    private javax.swing.JComboBox jComboBox19;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox20;
-    private javax.swing.JComboBox jComboBox21;
-    private javax.swing.JComboBox jComboBox22;
-    private javax.swing.JComboBox jComboBox23;
-    private javax.swing.JComboBox jComboBox24;
-    private javax.swing.JComboBox jComboBox25;
-    private javax.swing.JComboBox jComboBox26;
-    private javax.swing.JComboBox jComboBox27;
-    private javax.swing.JComboBox jComboBox28;
-    private javax.swing.JComboBox jComboBox29;
-    private javax.swing.JComboBox jComboBox3;
-    private javax.swing.JComboBox jComboBox30;
-    private javax.swing.JComboBox jComboBox31;
-    private javax.swing.JComboBox jComboBox32;
-    private javax.swing.JComboBox jComboBox4;
-    private javax.swing.JComboBox jComboBox5;
-    private javax.swing.JComboBox jComboBox6;
-    private javax.swing.JComboBox jComboBox7;
-    private javax.swing.JComboBox jComboBox8;
-    private javax.swing.JComboBox jComboBox9;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JDialog jDialog3;
@@ -1494,21 +1687,40 @@ public class loginScreen extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JButton logoutButton;
     private javax.swing.JFrame makeBooking;
     private javax.swing.JButton menuButton;
     private javax.swing.JDialog menuDialog;
+    private javax.swing.JComboBox monthPull;
+    private javax.swing.JTextField nameInput;
+    private javax.swing.JTextField numberInput;
+    private javax.swing.JComboBox numberPull;
+    private javax.swing.JButton openCreateBills;
+    private javax.swing.JTextField passwordInput;
+    private javax.swing.JTextArea requirementsInput;
+    private javax.swing.JButton returnHomeScreen;
+    private javax.swing.JButton returnToHome;
+    private javax.swing.JComboBox sittingPull;
+    private javax.swing.JComboBox startDayPull;
+    private javax.swing.JComboBox startMonthPull;
+    private javax.swing.JComboBox startYearPull;
+    private javax.swing.JTextField surnameInput;
+    private javax.swing.JTextField usernameInput;
     private javax.swing.JFrame viewCreateBill;
     private javax.swing.JFrame viewCreateMenu;
+    private javax.swing.JComboBox viewEndDayPull;
+    private javax.swing.JComboBox viewEndMonthPull;
+    private javax.swing.JComboBox viewEndYearPull;
+    private javax.swing.JComboBox viewFoodCategoryPull;
+    private javax.swing.JButton viewMenuSearchButton;
+    private javax.swing.JComboBox viewMenuStylePull;
+    private javax.swing.JComboBox viewMenuTypePull;
+    private javax.swing.JButton viewReturnHome;
+    private javax.swing.JComboBox viewStartDayPull;
+    private javax.swing.JComboBox viewStartMonthPull;
+    private javax.swing.JComboBox viewStartYearPull;
+    private javax.swing.JComboBox yearPull;
     // End of variables declaration//GEN-END:variables
 
 }
