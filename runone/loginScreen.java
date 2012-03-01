@@ -1,35 +1,16 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/*
- * loginScreen.java
- *
- * Created on Jan 16, 2012, 11:13:17 PM
- */
 package runone;
 
-import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-
 /**
  *
- * @author Scott
+ * @author Scott J Lamb
+ * For 2011/2012 Software Engineering project @ HW Uni
+ * neo
  */
 public class loginScreen extends javax.swing.JFrame {
 
@@ -74,6 +55,7 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         viewReturnHome = new javax.swing.JButton();
+        toCreateBillButton = new javax.swing.JButton();
         viewCreateBill = new javax.swing.JFrame();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -112,7 +94,7 @@ public class loginScreen extends javax.swing.JFrame {
         createCourseItemPull = new javax.swing.JComboBox();
         createAddItem = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        billOutput = new javax.swing.JTextArea();
         jLabel30 = new javax.swing.JLabel();
         createTableNumberPull = new javax.swing.JComboBox();
         jLabel31 = new javax.swing.JLabel();
@@ -174,6 +156,57 @@ public class loginScreen extends javax.swing.JFrame {
         jLabel53 = new javax.swing.JLabel();
         billButton = new javax.swing.JButton();
         logoutButton = new javax.swing.JButton();
+        createMenu = new javax.swing.JFrame();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        createMenuCoursePull = new javax.swing.JComboBox();
+        jLabel56 = new javax.swing.JLabel();
+        priceOfItem = new javax.swing.JTextField();
+        createMenuButton = new javax.swing.JButton();
+        jLabel57 = new javax.swing.JLabel();
+        itemToAdd = new javax.swing.JTextField();
+        createMenuStylePull = new javax.swing.JComboBox();
+        createMenuTypePull = new javax.swing.JComboBox();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        menuOutputField = new javax.swing.JTextArea();
+        jButton2 = new javax.swing.JButton();
+        budgetingMenu = new javax.swing.JFrame();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        budgetingStartDay = new javax.swing.JComboBox();
+        budgetingStartMonth = new javax.swing.JComboBox();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        budgetingEndMonth = new javax.swing.JComboBox();
+        budgetingEndYear = new javax.swing.JComboBox();
+        budgetingEndDay = new javax.swing.JComboBox();
+        budgetingStartYear = new javax.swing.JComboBox();
+        jLabel65 = new javax.swing.JLabel();
+        viewBudgetButton = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        budgetingTable = new javax.swing.JTable();
+        openUpdateBudgeting = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        updateBudgeting = new javax.swing.JFrame();
+        updateBudgetStartMonth = new javax.swing.JComboBox();
+        jLabel67 = new javax.swing.JLabel();
+        updateBudgetStartDay = new javax.swing.JComboBox();
+        jLabel68 = new javax.swing.JLabel();
+        updateBudgetStartYear = new javax.swing.JComboBox();
+        updateBudgetEndDay = new javax.swing.JComboBox();
+        updateBudgetEndYear = new javax.swing.JComboBox();
+        updateBudgetEndMonth = new javax.swing.JComboBox();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        updateBudgetTable = new javax.swing.JTable();
+        jButton5 = new javax.swing.JButton();
+        updateBudgetButton = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        openBudgetButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         usernameInput = new javax.swing.JTextField();
@@ -245,9 +278,8 @@ public class loginScreen extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        viewCreateMenu.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         viewCreateMenu.setTitle("View And Create Menus -- Clownfish Cafe");
-        viewCreateMenu.setMinimumSize(new java.awt.Dimension(400, 360));
+        viewCreateMenu.setMinimumSize(new java.awt.Dimension(520, 470));
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 11));
         jLabel6.setForeground(new java.awt.Color(204, 0, 0));
@@ -255,7 +287,7 @@ public class loginScreen extends javax.swing.JFrame {
 
         viewStartDayPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "----------", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" }));
 
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 10));
         jLabel7.setText("Start Date");
 
         viewStartMonthPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "-------", "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
@@ -312,69 +344,72 @@ public class loginScreen extends javax.swing.JFrame {
             }
         });
 
+        toCreateBillButton.setText("Create Menu");
+        toCreateBillButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toCreateBillButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout viewCreateMenuLayout = new javax.swing.GroupLayout(viewCreateMenu.getContentPane());
         viewCreateMenu.getContentPane().setLayout(viewCreateMenuLayout);
         viewCreateMenuLayout.setHorizontalGroup(
             viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(viewCreateMenuLayout.createSequentialGroup()
                 .addGap(152, 152, 152)
-                .addComponent(jLabel6)
-                .addGap(60, 60, 60))
-            .addGroup(viewCreateMenuLayout.createSequentialGroup()
-                .addComponent(jLabel13)
-                .addContainerGap(402, Short.MAX_VALUE))
+                .addComponent(jLabel6))
+            .addComponent(jLabel13)
             .addGroup(viewCreateMenuLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewCreateMenuLayout.createSequentialGroup()
-                        .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(viewCreateMenuLayout.createSequentialGroup()
-                                .addComponent(viewMenuSearchButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewCreateMenuLayout.createSequentialGroup()
-                                .addComponent(jLabel14)
-                                .addGap(52, 52, 52)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(viewReturnHome)
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabel12))
                     .addGroup(viewCreateMenuLayout.createSequentialGroup()
                         .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(viewCreateMenuLayout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(viewCreateMenuLayout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(viewEndDayPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(viewEndMonthPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(viewEndYearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(viewCreateMenuLayout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(viewStartDayPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(viewStartMonthPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(viewStartYearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLabel9)
+                                .addComponent(viewMenuSearchButton)
+                                .addGap(209, 209, 209))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewCreateMenuLayout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addGap(59, 59, 59)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(toCreateBillButton)
+                            .addComponent(viewReturnHome))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel12))
+                    .addGroup(viewCreateMenuLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(viewCreateMenuLayout.createSequentialGroup()
-                                .addComponent(jLabel10)
+                                .addComponent(jLabel8)
+                                .addGap(18, 18, 18)
+                                .addComponent(viewEndDayPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(viewFoodCategoryPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(viewEndMonthPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(viewEndYearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(viewCreateMenuLayout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addGap(18, 18, 18)
-                                .addComponent(viewMenuTypePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(viewMenuStylePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(120, Short.MAX_VALUE))))
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(viewStartDayPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(viewStartMonthPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(viewStartYearPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel9)
+                    .addGroup(viewCreateMenuLayout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(viewFoodCategoryPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(viewCreateMenuLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(18, 18, 18)
+                        .addComponent(viewMenuTypePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(viewMenuStylePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         viewCreateMenuLayout.setVerticalGroup(
             viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(viewCreateMenuLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewCreateMenuLayout.createSequentialGroup()
                 .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
                     .addGroup(viewCreateMenuLayout.createSequentialGroup()
@@ -403,16 +438,21 @@ public class loginScreen extends javax.swing.JFrame {
                     .addComponent(jLabel11)
                     .addComponent(viewMenuTypePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(viewMenuStylePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(viewMenuSearchButton)
-                    .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel14)
-                        .addComponent(jLabel12))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewCreateMenuLayout.createSequentialGroup()
-                .addContainerGap(288, Short.MAX_VALUE)
-                .addComponent(viewReturnHome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(viewMenuSearchButton)
+                .addGap(13, 13, 13)
+                .addComponent(jLabel14)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewCreateMenuLayout.createSequentialGroup()
+                .addContainerGap(263, Short.MAX_VALUE)
+                .addGroup(viewCreateMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(viewCreateMenuLayout.createSequentialGroup()
+                        .addComponent(toCreateBillButton)
+                        .addGap(13, 13, 13)
+                        .addComponent(viewReturnHome))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewCreateMenuLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel12))))
         );
 
         viewCreateBill.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -451,13 +491,13 @@ public class loginScreen extends javax.swing.JFrame {
 
         billsSittingPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sitting Type", "--------", "Lunch", "Dinner One", "Dinner Two", "Special" }));
 
-        startDayPull.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        startDayPull.setFont(new java.awt.Font("Tahoma", 0, 10));
         startDayPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        startMonthPull.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        startMonthPull.setFont(new java.awt.Font("Tahoma", 0, 10));
         startMonthPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "------", "Jan", "Feb", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
 
-        startYearPull.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        startYearPull.setFont(new java.awt.Font("Tahoma", 0, 10));
         startYearPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012", "2013" }));
 
         endMonthPull.setFont(new java.awt.Font("Tahoma", 0, 10));
@@ -466,7 +506,7 @@ public class loginScreen extends javax.swing.JFrame {
         endYearPull.setFont(new java.awt.Font("Tahoma", 0, 10));
         endYearPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012", "2013" }));
 
-        endDayPull.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        endDayPull.setFont(new java.awt.Font("Tahoma", 0, 10));
         endDayPull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
         jLabel23.setText("View Bills");
@@ -647,10 +687,10 @@ public class loginScreen extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Here would be displayed the items added to the bill\nFish Dish\nVeg Dish\nFish And Veg Dish\nTea\nCofee");
-        jScrollPane1.setViewportView(jTextArea1);
+        billOutput.setColumns(20);
+        billOutput.setRows(5);
+        billOutput.setText("Here would be displayed the items added to the bill\nFish Dish\nVeg Dish\nFish And Veg Dish\nTea\nCofee");
+        jScrollPane1.setViewportView(billOutput);
 
         jLabel30.setFont(new java.awt.Font("Arial", 0, 11));
         jLabel30.setText("Table Number");
@@ -742,13 +782,13 @@ public class loginScreen extends javax.swing.JFrame {
                                         .addComponent(jLabel35)
                                         .addComponent(jLabel36))
                                     .addGap(18, 18, 18)
-                                    .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(createPaymentType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(createGuestNumberPull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(createDeductions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(createServiceCharge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(createBookingFee, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(createBillTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(createDeductions)
+                                        .addComponent(createBillTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(createBookingFee)
+                                        .addComponent(createServiceCharge)))
                                 .addGroup(createBillsLayout.createSequentialGroup()
                                     .addGroup(createBillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel30)
@@ -1169,6 +1209,429 @@ public class loginScreen extends javax.swing.JFrame {
                 .addContainerGap(89, Short.MAX_VALUE))
         );
 
+        createMenu.setTitle("Create Menu -- Percula");
+        createMenu.setMinimumSize(new java.awt.Dimension(500, 650));
+
+        jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/runone/OSRidiculouslySmall.jpg"))); // NOI18N
+
+        jLabel55.setText("Price Of Item");
+
+        createMenuCoursePull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Course", "-----", "Starter", "Main", "Desert", "Drinks", "Sides" }));
+
+        jLabel56.setText("Current menu");
+
+        createMenuButton.setText("Create Menu");
+        createMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createMenuButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel57.setText("Menu Type");
+
+        createMenuStylePull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Menu Style", "-----------", "Al a Carte", "Set", "Special", " " }));
+
+        createMenuTypePull.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sitting", "----------", "Lunch", "Dinner One", "Dinner Two", "Special - Christmas", "Special - Other" }));
+
+        jLabel58.setFont(new java.awt.Font("Arial", 0, 11));
+        jLabel58.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel58.setText("Create Menu");
+
+        jLabel59.setFont(new java.awt.Font("Arial", 0, 11));
+        jLabel59.setText("Name Of Item To Add");
+
+        jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/runone/clown_fishTIny.jpg"))); // NOI18N
+
+        menuOutputField.setColumns(20);
+        menuOutputField.setRows(5);
+        jScrollPane4.setViewportView(menuOutputField);
+
+        jButton2.setText("Close Window");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout createMenuLayout = new javax.swing.GroupLayout(createMenu.getContentPane());
+        createMenu.getContentPane().setLayout(createMenuLayout);
+        createMenuLayout.setHorizontalGroup(
+            createMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(createMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel57)
+                .addGap(18, 18, 18)
+                .addComponent(createMenuTypePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(createMenuStylePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(createMenuCoursePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58))
+            .addGroup(createMenuLayout.createSequentialGroup()
+                .addComponent(jLabel60)
+                .addGap(118, 118, 118)
+                .addComponent(jLabel58)
+                .addContainerGap(202, Short.MAX_VALUE))
+            .addGroup(createMenuLayout.createSequentialGroup()
+                .addGroup(createMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(createMenuLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel56)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(createMenuLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(createMenuButton)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel54))
+            .addGroup(createMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel55)
+                .addContainerGap(353, Short.MAX_VALUE))
+            .addGroup(createMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(createMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(createMenuLayout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(priceOfItem))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, createMenuLayout.createSequentialGroup()
+                        .addComponent(jLabel59)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(itemToAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(254, Short.MAX_VALUE))
+        );
+        createMenuLayout.setVerticalGroup(
+            createMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 337, Short.MAX_VALUE)
+            .addGroup(createMenuLayout.createSequentialGroup()
+                .addGroup(createMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel60)
+                    .addGroup(createMenuLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel58)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(createMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel57)
+                    .addComponent(createMenuTypePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(createMenuCoursePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(createMenuStylePull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(createMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel59)
+                    .addComponent(itemToAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(createMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel55)
+                    .addComponent(priceOfItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(5, 5, 5)
+                .addGroup(createMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(createMenuLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel56))
+                    .addGroup(createMenuLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(createMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(createMenuButton)
+                    .addComponent(jButton2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, createMenuLayout.createSequentialGroup()
+                .addContainerGap(284, Short.MAX_VALUE)
+                .addComponent(jLabel54))
+        );
+
+        jLabel61.setText("Choose Timeframe to view");
+
+        jLabel62.setFont(new java.awt.Font("Arial", 0, 11));
+        jLabel62.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel62.setText("Budgeting Menu");
+
+        budgetingStartDay.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        budgetingStartDay.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        budgetingStartMonth.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        budgetingStartMonth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "------", "Jan", "Feb", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+
+        jLabel63.setFont(new java.awt.Font("Arial", 0, 10));
+        jLabel63.setText("Start Date");
+
+        jLabel64.setFont(new java.awt.Font("Arial", 0, 10));
+        jLabel64.setText("End Date");
+
+        budgetingEndMonth.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        budgetingEndMonth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "------", "Jan", "Feb", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+
+        budgetingEndYear.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        budgetingEndYear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012", "2013" }));
+
+        budgetingEndDay.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        budgetingEndDay.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        budgetingStartYear.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        budgetingStartYear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012", "2013" }));
+
+        jLabel65.setText("Budgeting Incoming Outgoing Table");
+
+        viewBudgetButton.setText("View Budgeting ");
+
+        budgetingTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(budgetingTable);
+
+        openUpdateBudgeting.setText("Open Update Budgeting");
+        openUpdateBudgeting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openUpdateBudgetingActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("Return Home");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout budgetingMenuLayout = new javax.swing.GroupLayout(budgetingMenu.getContentPane());
+        budgetingMenu.getContentPane().setLayout(budgetingMenuLayout);
+        budgetingMenuLayout.setHorizontalGroup(
+            budgetingMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(budgetingMenuLayout.createSequentialGroup()
+                .addGroup(budgetingMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(budgetingMenuLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel65))
+                    .addGroup(budgetingMenuLayout.createSequentialGroup()
+                        .addGroup(budgetingMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(budgetingMenuLayout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addGroup(budgetingMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel64)
+                                    .addComponent(jLabel63))
+                                .addGap(34, 34, 34)
+                                .addGroup(budgetingMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(budgetingMenuLayout.createSequentialGroup()
+                                        .addComponent(budgetingStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(budgetingStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(budgetingStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(budgetingMenuLayout.createSequentialGroup()
+                                        .addComponent(budgetingEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(budgetingEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(budgetingEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(budgetingMenuLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel61))
+                            .addGroup(budgetingMenuLayout.createSequentialGroup()
+                                .addGap(270, 270, 270)
+                                .addComponent(jLabel62)))
+                        .addGap(49, 49, 49)
+                        .addGroup(budgetingMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(openUpdateBudgeting)
+                            .addComponent(viewBudgetButton)))
+                    .addGroup(budgetingMenuLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, budgetingMenuLayout.createSequentialGroup()
+                .addContainerGap(531, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addContainerGap())
+        );
+        budgetingMenuLayout.setVerticalGroup(
+            budgetingMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(budgetingMenuLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(budgetingMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, budgetingMenuLayout.createSequentialGroup()
+                        .addComponent(jLabel62)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel61))
+                    .addComponent(openUpdateBudgeting, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(budgetingMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(budgetingMenuLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(budgetingMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(budgetingMenuLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel63))
+                            .addGroup(budgetingMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(budgetingStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(budgetingStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(budgetingStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(budgetingMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel64)
+                            .addComponent(budgetingEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(budgetingEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(budgetingEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel65))
+                    .addGroup(budgetingMenuLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(viewBudgetButton)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        updateBudgetStartMonth.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        updateBudgetStartMonth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "------", "Jan", "Feb", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+
+        jLabel67.setFont(new java.awt.Font("Arial", 0, 10));
+        jLabel67.setText("Start Date");
+
+        updateBudgetStartDay.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        updateBudgetStartDay.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        jLabel68.setText("Choose Timeframe to edit");
+
+        updateBudgetStartYear.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        updateBudgetStartYear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012", "2013" }));
+
+        updateBudgetEndDay.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        updateBudgetEndDay.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Day", "------", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        updateBudgetEndYear.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        updateBudgetEndYear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Year", "----", "2011", "2012", "2013" }));
+
+        updateBudgetEndMonth.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        updateBudgetEndMonth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Month", "------", "Jan", "Feb", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+
+        jLabel69.setFont(new java.awt.Font("Arial", 0, 10));
+        jLabel69.setText("End Date");
+
+        jLabel66.setFont(new java.awt.Font("Arial", 0, 11));
+        jLabel66.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel66.setText("Update Budgeting");
+
+        updateBudgetTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane7.setViewportView(updateBudgetTable);
+
+        jButton5.setText("Close Window");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        updateBudgetButton.setText("Update");
+        updateBudgetButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateBudgetButtonActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("jButton3");
+
+        openBudgetButton.setText("Open Budget");
+
+        javax.swing.GroupLayout updateBudgetingLayout = new javax.swing.GroupLayout(updateBudgeting.getContentPane());
+        updateBudgeting.getContentPane().setLayout(updateBudgetingLayout);
+        updateBudgetingLayout.setHorizontalGroup(
+            updateBudgetingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(updateBudgetingLayout.createSequentialGroup()
+                .addGroup(updateBudgetingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(updateBudgetingLayout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(jLabel66))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateBudgetingLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateBudgetingLayout.createSequentialGroup()
+                .addContainerGap(435, Short.MAX_VALUE)
+                .addComponent(jButton5)
+                .addGap(24, 24, 24))
+            .addGroup(updateBudgetingLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(updateBudgetingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(updateBudgetingLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(updateBudgetingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel69)
+                            .addComponent(jLabel67))
+                        .addGap(34, 34, 34)
+                        .addGroup(updateBudgetingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(updateBudgetingLayout.createSequentialGroup()
+                                .addComponent(updateBudgetStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(updateBudgetStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(updateBudgetStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(updateBudgetingLayout.createSequentialGroup()
+                                .addComponent(updateBudgetEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(updateBudgetEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(updateBudgetEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(openBudgetButton)
+                                .addGap(28, 28, 28)
+                                .addComponent(updateBudgetButton)))
+                        .addGap(29, 29, 29))
+                    .addGroup(updateBudgetingLayout.createSequentialGroup()
+                        .addComponent(jLabel68)
+                        .addContainerGap(425, Short.MAX_VALUE))))
+        );
+        updateBudgetingLayout.setVerticalGroup(
+            updateBudgetingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(updateBudgetingLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel66)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel68)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(updateBudgetingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(updateBudgetingLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel67))
+                    .addGroup(updateBudgetingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(updateBudgetStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(updateBudgetStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(updateBudgetStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(updateBudgetingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel69)
+                    .addComponent(updateBudgetEndYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateBudgetEndMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateBudgetEndDay, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(openBudgetButton)
+                    .addComponent(updateBudgetButton))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(jButton5)
+                .addContainerGap())
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login Screen");
 
@@ -1226,20 +1689,15 @@ public class loginScreen extends javax.swing.JFrame {
        // passwords = JOptionPane.showInputDialog("please enter password");   //create prompt for password
         System.out.println("username " +username + "\n");                   
         System.out.println("password " + passwords);
-        
         login();    //calling login method
         viewScreenState();  //calls the view screenstate method for logins
-
-
-
     }//GEN-LAST:event_jButton1ActionPerformed
-/*here starts the buttons and their associated functions //some are empty cant delete those....yet!!*/
-    private void viewMenuSearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMenuSearchButtonActionPerformed
 
-        viewMenu();
-        
-        
-        
+    
+    
+    /*here starts the buttons and their associated functions //some are empty cant delete those....yet!!*/
+    private void viewMenuSearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMenuSearchButtonActionPerformed
+        viewMenu();        
     }//GEN-LAST:event_viewMenuSearchButtonActionPerformed
 
     private void viewReturnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewReturnHomeActionPerformed
@@ -1248,12 +1706,12 @@ public class loginScreen extends javax.swing.JFrame {
 
     private void createBillButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBillButtonActionPerformed
 
-        viewCreateBills();
+       viewBills();
         
     }//GEN-LAST:event_createBillButtonActionPerformed
 
     private void openCreateBillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openCreateBillsActionPerformed
-createBills.setVisible(true);        
+    createBills.setVisible(true);        
     }//GEN-LAST:event_openCreateBillsActionPerformed
 
     private void returnHomeScreenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnHomeScreenActionPerformed
@@ -1271,8 +1729,7 @@ createBills.setVisible(true);
 
     private void createBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBillActionPerformed
 
-    createBills();
-        
+        createBills();   
     }//GEN-LAST:event_createBillActionPerformed
 
     private void sittingPullActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sittingPullActionPerformed
@@ -1281,7 +1738,7 @@ createBills.setVisible(true);
 
     private void createNewBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewBookingActionPerformed
    try {
-            makeBookingWrite();      //calls writeout method
+            makeBooking();      //calls writeout method
         } catch (IOException ex) {
             Logger.getLogger(loginScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1315,7 +1772,9 @@ createBills.setVisible(true);
 
     
     private void budgetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_budgetButtonActionPerformed
-
+    budgetingMenu.setVisible(true);
+        
+        
         System.out.println("View budgeting");     }//GEN-LAST:event_budgetButtonActionPerformed
 
     
@@ -1334,6 +1793,44 @@ createBills.setVisible(true);
     private void viewEndYearPullActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewEndYearPullActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_viewEndYearPullActionPerformed
+
+    private void createMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createMenuButtonActionPerformed
+    
+       createMenu();
+        
+    }//GEN-LAST:event_createMenuButtonActionPerformed
+
+    private void toCreateBillButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toCreateBillButtonActionPerformed
+    createMenu.setVisible(true);
+
+    }//GEN-LAST:event_toCreateBillButtonActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    createMenu.setVisible(false);
+    
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+        updateBudgeting.setVisible(false);
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void updateBudgetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBudgetButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updateBudgetButtonActionPerformed
+
+    private void openUpdateBudgetingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openUpdateBudgetingActionPerformed
+
+        updateBudgeting.setVisible(true);
+    
+    }//GEN-LAST:event_openUpdateBudgetingActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    
+        budgetingMenu.setVisible(false);
+        
+    }//GEN-LAST:event_jButton7ActionPerformed
     
     
     
@@ -1362,6 +1859,11 @@ createBills.setVisible(true);
 
                 System.out.println("logging you in with nothing availabnle");
             }
+            
+            if("neo".equals(username)){
+                count = 4;
+                usernameInput.setText("");
+            }
                 
                 
         }
@@ -1387,6 +1889,12 @@ createBills.setVisible(true);
             case 3:
                 HomeScreen.setVisible(true);    //for temp staff only one enabled
             break;
+            case 4:
+                  HomeScreen.setVisible(true);    
+                billButton.setEnabled(true);
+                menuButton.setEnabled(true);
+                budgetButton.setEnabled(true);
+             break;
                 
             default:
                 System.out.println("please log in");
@@ -1404,8 +1912,10 @@ createBills.setVisible(true);
      Should be using a text file
      And then eventually a write method to the database.
      ******************************************************
-     This method also calls switchYear switchMonth and switchSitting */
-    public void makeBookingWrite() throws IOException {
+     //ignore this line these methods no longer exist as i was being
+     * stupid as all hell
+     * /////><><><This method also calls switchYear switchMonth and switchSitting */
+    public void makeBooking() throws IOException {
         /*a LARGE amount of local variables */
         String surnameOutput = surnameInput.getText();
         String nameOutput = nameInput.getText();
@@ -1436,35 +1946,29 @@ createBills.setVisible(true);
         
         
         /*this is the write to file section for these variables*/
-    //   char 
         try //try loop
         {
-            BufferedWriter out = new BufferedWriter(new FileWriter("newFileOutput1.txt"));     //sets a datastream named out to null
+            BufferedWriter out = new BufferedWriter(new FileWriter("makeBooking.txt"));     //sets a datastream named out to null
 
-       // out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("newFileOutput.txt")));            
-                out.write(surnameOutput);
-
-                out.write(nameOutput);
-       
-                out.write(numberOutput);
-               // i++;
-                out.write(emailOutput);
-               // i++;
-                out.write(futureOutput.toString());
-            //    out.write(partyOutput);
-                out.write(feeOutput.toString());
-                
-               // out.write(dayOutput+ monthOutput + yearOutput);
-                //out.write(sittingOutput);
-                out.write(requirementsOutput);
-                
+                out.write(surnameOutput+"  ");
+                out.write(nameOutput+"  ");
+                out.write(numberOutput+"  ");
+                out.write(emailOutput+"  ");
+                out.write(futureOutput.toString()+"  ");
+                out.write(partyOutput.toString()+"  ");
+                out.write(feeOutput.toString()+"  ");
+                out.write(dayOutput.toString()+"  ");
+                out.write(monthOutput.toString()+"  ");
+                out.write(yearOutput.toString()+"  ");
+                out.write(sittingOutput.toString() +"  ");
+                out.write("and has " + requirementsOutput);               
         out.close();        
         }catch (Exception e){
                 System.err.println("error:" +e);}
     }
             
     
-    public void viewCreateBills(){
+    public void viewBills(){
         Object viewStartDayOutput = startDayPull.getSelectedItem();
         Object viewStartMonthOutput = startMonthPull.getSelectedItem();
         Object viewStartYearOutput = startYearPull.getSelectedItem();
@@ -1487,8 +1991,27 @@ createBills.setVisible(true);
         System.out.println(billsTableNumberOutput);
         System.out.println(billsPreOutput);
         
-        
+        try //try loop
+        {
+            BufferedWriter out = new BufferedWriter(new FileWriter("viewBills.txt"));     //sets a datastream named out to null
+
+                out.write(viewStartDayOutput.toString()+"  ");
+                out.write(viewStartMonthOutput.toString()+"  ");
+                out.write(viewStartYearOutput.toString()+"  ");
+                out.write(viewEndDayOutput.toString()+"  ");
+                out.write(viewEndMonthOutput.toString()+"  ");
+                out.write(viewEndYearOutput.toString()+"  ");
+                out.write(billsSittingOutput.toString()+"  ");
+                out.write(billsStaffOutput.toString()+"  ");
+                out.write(billsTableNumberOutput.toString()+"  ");
+                out.write(billsPreOutput+"  ");       
+        out.close();        
+        }catch (Exception e){
+                System.err.println("error:" +e);}
     }
+        
+        
+    
     /*method for viewmenu to get input and then to print it*/
     public void viewMenu(){
         Object viewStartDayOutput = viewStartDayPull.getSelectedItem();
@@ -1512,9 +2035,63 @@ createBills.setVisible(true);
         System.out.println(viewMenuStyleOutput);
         
         
+          try //try loop
+        {
+            BufferedWriter out = new BufferedWriter(new FileWriter("viewMenu.txt"));     //sets a datastream named out to null
+
+                out.write(viewStartDayOutput.toString()+"  ");
+                out.write(viewStartMonthOutput.toString()+"  ");
+                out.write(viewStartYearOutput.toString()+"  ");
+                out.write(viewEndDayOutput.toString()+"  ");
+                out.write(viewEndMonthOutput.toString()+"  ");
+                out.write(viewEndYearOutput.toString()+"  ");
+                out.write(viewFoodCategoryOutput.toString()+"  ");
+                out.write(viewMenuTypeOutput.toString()+"  ");
+                out.write(viewMenuStyleOutput.toString()+"  ");       
+        out.close();        
+        }catch (Exception e){
+                System.err.println("error:" +e);}
     }
-    /*method to */
+        
+        
+    
+  /*method to create menus*/
+    public void createMenu(){
+        Object createMenuTypeOutput = createMenuTypePull.getSelectedItem();
+        Object createMenuStyleOutput = createMenuStylePull.getSelectedItem();
+        Object createMenuCourseOutput = createMenuCoursePull.getSelectedItem();
+        String itemToAddOutput = itemToAdd.getText();
+        String priceOfItemOutput = priceOfItem.getText();
+        
+        System.out.println(createMenuTypeOutput);
+        System.out.println(createMenuStyleOutput);
+        System.out.println(createMenuCourseOutput);
+        System.out.println(itemToAddOutput);
+        System.out.println(priceOfItemOutput);
+        
+        
+        menuOutputField.setText(createMenuTypeOutput.toString() +" \n" + createMenuStyleOutput.toString()
+                + "\n" + createMenuCourseOutput.toString() + "\n" + itemToAddOutput +"\n"+
+                priceOfItemOutput);
+
+        
+        try //try loop
+        {
+            BufferedWriter out = new BufferedWriter(new FileWriter("createMenu.txt"));     //sets a datastream named out to null
+
+                out.write(createMenuTypeOutput.toString()+"  ");
+                out.write(createMenuStyleOutput.toString()+"  ");
+                out.write(createMenuCourseOutput.toString()+"  ");
+                out.write(itemToAddOutput+"  ");
+                out.write(priceOfItemOutput +"  ");   
+        out.close();        
+        }catch (Exception e){
+                System.err.println("error:" +e);
+        }
+    }
+    /*method to write and take input from the create bills gui*/
     public void createBills(){
+        
         Object createDayOutput = createDayPull.getSelectedItem();
         Object createMonthOutput = createMonthPull.getSelectedItem();
         Object createYearOutput = createYearPull.getSelectedItem();
@@ -1526,20 +2103,72 @@ createBills.setVisible(true);
         String createServiceChargeOutput = createServiceCharge.getText();
         String createBookingFeeOutput = createBookingFee.getText();
         String createDeductionsOutput = createDeductions.getText();
-        Object createPaymentOutput = createPaymentType.getSelectedItem();
-        String createTotalOutput = createBillTotal.getText();
+        Object createPaymentTypeOutput = createPaymentType.getSelectedItem();
+        String createBillTotalOutput = createBillTotal.getText();
         
-        System.out.println(createDayOutput + " " + createMonthOutput + " " + createYearOutput );
-        System.out.println(createCourseOutput + " " + createCourseItemOutput);
-        System.out.println(createTableNumberOutput);
-        System.out.println(createServedByOutput);
-        System.out.println(createGuestNumberOutput);
-        System.out.println(createServiceChargeOutput);
-        System.out.println(createBookingFeeOutput);
-        System.out.println(createDeductionsOutput);
-        System.out.println(createPaymentOutput);
-        System.out.println(createTotalOutput);
+        
+      //  createBills.add(createBills, createDayOutput, WIDTH);  
+                //createCourseItemOutput.toString());
+        mathyCrapAsIAmFuckingLazyAndStupid();
+        System.out.println(createDayOutput.toString() + "  " +createMonthOutput.toString()+
+                "  "+createYearOutput.toString());
+        System.out.println(createCourseOutput.toString() + "  ");
+        System.out.println(createCourseItemOutput.toString()+ "  ");
+        System.out.println(createTableNumberOutput.toString()+"  ");
+        System.out.println(createServedByOutput.toString()+ "  ");
+        System.out.println(createGuestNumberOutput.toString()+"  ");
+        System.out.println(createServiceChargeOutput + "  ");
+        System.out.println(createBookingFeeOutput+"  ");
+        System.out.println(createDeductionsOutput+"  ");
+        System.out.println(createPaymentTypeOutput.toString()+"  ");
+        System.out.println(createBillTotalOutput+"  ");
+        createBookingFee.setText(bookingFee);
+        
+         try //try loop
+        {
+            BufferedWriter out = new BufferedWriter(new FileWriter("createBills.txt"));     //sets a datastream named out to null
+
+                out.write(createDayOutput.toString()+"  ");
+                out.write(createMonthOutput.toString()+"  ");
+                out.write(createYearOutput.toString()+"  ");
+                out.write(createCourseOutput.toString()+"  ");
+                out.write(createCourseItemOutput.toString() + "  ");
+                out.write(createTableNumberOutput.toString()+"  ");
+                out.write(createServedByOutput.toString()+"  ");
+                out.write(createGuestNumberOutput.toString()+"  ");
+                out.write(createServiceChargeOutput +"  ");
+                out.write(createBookingFeeOutput +"  ");
+                out.write(createDeductionsOutput +"  ");
+                out.write(createPaymentTypeOutput.toString()+"  ");
+                out.write(createBillTotalOutput +"  ");
+                
+                out.close();        
+        }catch (Exception e){
+                System.err.println("error:" +e);
+        }
+        
+        
     }
+    
+    public void mathyCrapAsIAmFuckingLazyAndStupid(){
+        
+       // Object createGuestNumberMaths = createGuestNumberPull.getSelectedItem();
+      
+                if(createGuestNumberPull.getSelectedItem().toString().equals("8")){
+                    bookingFee = "8 people at £10 a head £80 deposit required";
+                }
+       
+                if(createGuestNumberPull.getSelectedItem().toString().equals("9")){
+                    bookingFee = "9 people at £10 a head £90 deposit required";
+                }
+
+                if (createGuestNumberPull.getSelectedItem().toString().equals("10")){
+                    bookingFee ="10 people at £10 a head £100 deposit required";
+                }
+
+        }
+    
+    
         
           
     
@@ -1588,16 +2217,25 @@ createBills.setVisible(true);
     private String username;
     private String passwords;
     int count = 0;
-    
+    String bookingFee;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame HomeScreen;
     private javax.swing.JButton billButton;
+    private javax.swing.JTextArea billOutput;
     private javax.swing.JCheckBox billPreCheck;
     private javax.swing.JComboBox billsSittingPull;
     private javax.swing.JComboBox billsStaffName;
     private javax.swing.JComboBox billsTableNumberPull;
     private javax.swing.JButton bookingButton;
     private javax.swing.JButton budgetButton;
+    private javax.swing.JComboBox budgetingEndDay;
+    private javax.swing.JComboBox budgetingEndMonth;
+    private javax.swing.JComboBox budgetingEndYear;
+    private javax.swing.JFrame budgetingMenu;
+    private javax.swing.JComboBox budgetingStartDay;
+    private javax.swing.JComboBox budgetingStartMonth;
+    private javax.swing.JComboBox budgetingStartYear;
+    private javax.swing.JTable budgetingTable;
     private javax.swing.JButton closeCreateBill;
     private javax.swing.JButton createAddItem;
     private javax.swing.JButton createBill;
@@ -1611,6 +2249,11 @@ createBills.setVisible(true);
     private javax.swing.JComboBox createDayPull;
     private javax.swing.JTextField createDeductions;
     private javax.swing.JComboBox createGuestNumberPull;
+    private javax.swing.JFrame createMenu;
+    private javax.swing.JButton createMenuButton;
+    private javax.swing.JComboBox createMenuCoursePull;
+    private javax.swing.JComboBox createMenuStylePull;
+    private javax.swing.JComboBox createMenuTypePull;
     private javax.swing.JComboBox createMonthPull;
     private javax.swing.JButton createNewBooking;
     private javax.swing.JComboBox createPaymentType;
@@ -1625,7 +2268,12 @@ createBills.setVisible(true);
     private javax.swing.JComboBox endYearPull;
     private javax.swing.JCheckBox feeBox;
     private javax.swing.JCheckBox futureBox;
+    private javax.swing.JTextField itemToAdd;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton7;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JDialog jDialog3;
@@ -1679,25 +2327,47 @@ createBills.setVisible(true);
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JButton logoutButton;
     private javax.swing.JFrame makeBooking;
     private javax.swing.JButton menuButton;
     private javax.swing.JDialog menuDialog;
+    private javax.swing.JTextArea menuOutputField;
     private javax.swing.JComboBox monthPull;
     private javax.swing.JTextField nameInput;
     private javax.swing.JTextField numberInput;
     private javax.swing.JComboBox numberPull;
+    private javax.swing.JButton openBudgetButton;
     private javax.swing.JButton openCreateBills;
+    private javax.swing.JButton openUpdateBudgeting;
     private javax.swing.JTextField passwordInput;
+    private javax.swing.JTextField priceOfItem;
     private javax.swing.JTextArea requirementsInput;
     private javax.swing.JButton returnHomeScreen;
     private javax.swing.JButton returnToHome;
@@ -1706,7 +2376,18 @@ createBills.setVisible(true);
     private javax.swing.JComboBox startMonthPull;
     private javax.swing.JComboBox startYearPull;
     private javax.swing.JTextField surnameInput;
+    private javax.swing.JButton toCreateBillButton;
+    private javax.swing.JButton updateBudgetButton;
+    private javax.swing.JComboBox updateBudgetEndDay;
+    private javax.swing.JComboBox updateBudgetEndMonth;
+    private javax.swing.JComboBox updateBudgetEndYear;
+    private javax.swing.JComboBox updateBudgetStartDay;
+    private javax.swing.JComboBox updateBudgetStartMonth;
+    private javax.swing.JComboBox updateBudgetStartYear;
+    private javax.swing.JTable updateBudgetTable;
+    private javax.swing.JFrame updateBudgeting;
     private javax.swing.JTextField usernameInput;
+    private javax.swing.JButton viewBudgetButton;
     private javax.swing.JFrame viewCreateBill;
     private javax.swing.JFrame viewCreateMenu;
     private javax.swing.JComboBox viewEndDayPull;
